@@ -1,11 +1,12 @@
-
-
+/* ======================================================= */
+/* 1. VARIABLES & RESET (BASE DU THÈME FUTURISTE) */
+/* ======================================================= */
 
 :root {
-    --primary-bg: #1A1A1A;
-    --secondary-bg: #2C2C2C;
-    --text-color: #EAEAEA;
-    --accent-color: #00FFFF; /* Cyan électrique */
+    --primary-bg: #1A1A1A;     /* Gris très foncé/Noir */
+    --secondary-bg: #2C2C2C;   /* Gris foncé pour les cartes/sections */
+    --text-color: #EAEAEA;     /* Blanc cassé */
+    --accent-color: #00FFFF;   /* Cyan électrique (lueur) */
     --font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,7 +22,7 @@ body {
     background-color: var(--primary-bg);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden; /* Empêche la barre de défilement horizontale */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
 }
 
 /* --- Typographie et Couleurs --- */
@@ -34,13 +35,17 @@ h1, h2, h3 {
     color: var(--accent-color);
 }
 
-/* --- Transitions Smooth (APPLIQUÉ PARTOUT !) --- */
-a, button, .project-card {
+/* ======================================================= */
+/* 2. TRANSITIONS & LAYOUT (LA CLÉ DU "SMOOTH") */
+/* ======================================================= */
+
+/* Transitions Fluides (Appliquées à tous les éléments interactifs) */
+a, button, .project-card, .timeline-item {
     transition: all 0.3s ease-in-out; 
-    /* La clé du "smooth" : tous les changements prendront 0.3s */
+    /* 0.3s est le temps idéal pour un effet fluide sans être lent */
 }
 
-/* --- Layout Général --- */
+/* Layout Général */
 .section-container {
     padding: 80px 5%;
     max-width: 1200px;
@@ -53,11 +58,14 @@ a, button, .project-card {
     text-align: center;
 }
 
-/* --- Header & Navigation --- */
+/* ======================================================= */
+/* 3. HEADER, NAVIGATION & BOUTONS */
+/* ======================================================= */
+
 .main-header {
     background: var(--secondary-bg);
     padding: 20px 5%;
-    position: sticky;
+    position: sticky; /* Fixe la barre de navigation en haut */
     top: 0;
     z-index: 1000;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -75,6 +83,7 @@ nav {
     font-size: 1.5em;
     font-weight: 700;
     color: var(--accent-color);
+    text-decoration: none;
 }
 
 nav ul {
@@ -95,7 +104,7 @@ nav ul li a:hover {
     background-color: rgba(0, 255, 255, 0.1); /* Léger fond cyan au survol */
 }
 
-/* --- Boutons --- */
+/* Boutons */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -117,7 +126,71 @@ nav ul li a:hover {
     box-shadow: 0 0 10px var(--accent-color); /* Effet Glow */
 }
 
-/* --- Cartes de Projet (Le coeur du smooth) --- */
+
+/* ======================================================= */
+/* 4. INDEX.HTML - BIO & PARCOURS (TIMELINE) */
+/* ======================================================= */
+
+/* Bio */
+#bio .section-title {
+    font-size: 3.5em; 
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#bio p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin-bottom: 15px;
+    color: rgba(234, 234, 234, 0.9);
+}
+
+/* Timeline (Parcours) */
+.timeline {
+    border-top: 2px solid var(--secondary-bg); 
+    padding-top: 0;
+    margin-top: 50px;
+}
+
+.timeline::before {
+    content: none; /* Cache la ligne verticale centrale */
+}
+
+.timeline-item {
+    background: var(--secondary-bg);
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0; 
+    width: 100%;
+    max-width: 100%;
+    border-left: 5px solid var(--accent-color); 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-item:hover {
+    transform: translateX(10px); /* Glisse légèrement à droite (smooth) */
+    box-shadow: 0 5px 30px rgba(0, 255, 255, 0.1);
+}
+
+.timeline-item h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.timeline-item .institution {
+    font-weight: 700;
+    font-size: 1em;
+    margin-top: 5px;
+    color: var(--accent-color);
+}
+
+
+/* ======================================================= */
+/* 5. CARTES DE PROJET (INDEX & PROJECTS.HTML) */
+/* ======================================================= */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -130,9 +203,9 @@ nav ul li a:hover {
     text-decoration: none;
     color: var(--text-color);
     border-radius: 10px;
-    border-left: 5px solid transparent; /* Prépare la transition de bordure */
+    border-left: 5px solid transparent; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    display: block; /* Important pour que l'effet s'applique bien */
+    display: block; 
 }
 
 .project-card:hover {
@@ -157,64 +230,11 @@ nav ul li a:hover {
     margin-left: 5px;
 }
 
-/* --- Section Parcours (Timeline) --- */
-.timeline {
-    position: relative;
-    padding: 20px 0;
-}
+/* ======================================================= */
+/* 6. PAGES DE DÉTAIL DE PROJET (project-*.html) */
+/* ======================================================= */
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%; /* Centre la ligne sur grand écran */
-    width: 2px;
-    height: 100%;
-    background: var(--accent-color);
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    background: var(--secondary-bg);
-    padding: 20px;
-    border-radius: 5px;
-    margin: 20px auto;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    /* Animation AOS à ajouter : data-aos="fade-left" ou "fade-right" */
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 30px;
-    background-color: var(--secondary-bg);
-    color: rgba(234, 234, 234, 0.7);
-    font-size: 0.9em;
-}
-
-/* --- Responsive (pour s'adapter aux petits écrans) --- */
-@media (max-width: 768px) {
-    .main-header {
-        padding: 15px 5%;
-    }
-    nav ul {
-        display: none; /* Cache la nav sur mobile, on pourrait utiliser JS pour un menu burger */
-    }
-    .section-title {
-        font-size: 2em;
-    }
-    .timeline::before {
-        left: 30px; /* Décale la ligne à gauche sur mobile */
-    }
-    .timeline-item {
-        width: 100%;
-        max-width: none;
-        margin-left: 40px;
-    }
-}
-/* Nouveaux styles pour les pages de projet */
+/* Image/Vidéo principale */
 .main-image {
     width: 100%;
     height: auto;
@@ -222,9 +242,18 @@ footer {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
 }
 
+.project-detail h1 {
+    text-align: left;
+}
+
+.project-info {
+    margin-top: 40px;
+}
+
+/* Liste des fonctionnalités (Key Features) */
 .key-features {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 0;
     margin-bottom: 40px;
 }
 
@@ -236,6 +265,7 @@ footer {
     border-left: 3px solid var(--accent-color);
 }
 
+/* Badges de Technologies (Tech Tags) */
 .tech-list-container {
     display: flex;
     flex-wrap: wrap;
@@ -252,88 +282,83 @@ footer {
     font-weight: 700;
     font-size: 0.9em;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    /* L'effet 'flip-up' d'AOS est spectaculaire sur ces petits éléments */
-}
-/* Variables pour le thème futuriste et sombre */
-
-/* --- AMÉLIORATION DE LA PAGE D'ACCUEIL --- */
-
-/* Style du Titre Principal */
-#bio .section-title {
-    font-size: 3.5em; /* Grand titre pour l'impact */
-    text-align: left;
-    margin-bottom: 20px;
-    line-height: 1.2;
 }
 
-/* Style du paragraphe de profil */
-#bio p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin-bottom: 15px;
-    color: rgba(234, 234, 234, 0.9);
+/* Galerie d'images/captures */
+.image-gallery {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-/* --- AMÉLIORATION DU PARCOURS (TIMELINE) --- */
-
-/* Ligne centrale de la timeline */
-.timeline {
-    border-top: 2px solid var(--secondary-bg); /* Ligne supérieure pour le début */
-    padding-top: 0;
-    margin-top: 50px;
-}
-
-.timeline::before {
-    /* Cache l'ancienne ligne verticale du milieu */
-    content: none; 
-}
-
-/* Nouveaux styles pour les éléments de la timeline */
-.timeline-item {
-    background: var(--secondary-bg);
-    padding: 25px;
-    border-radius: 8px;
-    margin: 30px 0; /* Espacement vertical */
+.image-gallery img {
     width: 100%;
-    max-width: 100%;
-    border-left: 5px solid var(--accent-color); /* Bande accentuée */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    
-    /* Animation customisée pour la fluidité (facultatif mais cool) */
-    transition: transform 0.3s ease-in-out;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.timeline-item:hover {
-    transform: translateX(10px); /* Glisse légèrement à droite au survol */
-    box-shadow: 0 5px 30px rgba(0, 255, 255, 0.1); /* Petit glow au survol */
+/* Vidéo Responsive (Maintien du ratio 16:9) */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* Ratio 16:9 (9/16 = 0.5625) */
+    position: relative;
+    height: 0;
+    margin-bottom: 30px;
+    border: 3px solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
-.timeline-item h3 {
-    color: var(--text-color);
-    margin-bottom: 5px;
-    font-size: 1.4em;
+.video-responsive iframe,
+.video-responsive video {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
-.timeline-item .institution {
-    font-weight: 700;
-    font-size: 1em;
-    margin-top: 5px;
+
+/* ======================================================= */
+/* 7. FOOTER & RESPONSIVE DESIGN */
+/* ======================================================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--secondary-bg);
+    color: rgba(234, 234, 234, 0.7);
+    font-size: 0.9em;
 }
 
-/* --- Responsive (Ajustement pour mobile) --- */
+/* Responsive (Mobile) */
 @media (max-width: 768px) {
+    .main-header {
+        padding: 15px 5%;
+    }
+    nav ul {
+        display: none; /* Cache la nav sur mobile (on pourrait ajouter un menu burger en JS si besoin) */
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
     #bio .section-title {
         font-size: 2.5em;
         text-align: center;
     }
+    
     #bio p {
         text-align: center;
     }
+    
     .primary-btn {
         display: block;
         width: 100%;
         text-align: center;
     }
 }
-
-
