@@ -2,14 +2,26 @@
 /* 1. VARIABLES & RESET (BASE DU THÈME FUTURISTE) */
 /* ======================================================= */
 
-:root {
+/*:root {
     --primary-bg: #1A1A1A;     /* Gris très foncé/Noir */
     --secondary-bg: #2C2C2C;   /* Gris foncé pour les cartes/sections */
     --text-color: #EAEAEA;     /* Blanc cassé */
     --accent-color: #00FFFF;   /* Cyan électrique (lueur) */
     --font-family: 'Montserrat', sans-serif;
-}
+}*/
 
+/* ======================================================= */
+/* 1. VARIABLES & RESET (BASE DU THÈME FUTURISTE) */
+/* ======================================================= */
+
+:root {
+    --primary-bg: #0A0A1F;     /* Bleu très foncé/Presque noir (pour le fond) */
+    --secondary-bg: #151538;   /* Bleu foncé pour les cartes/sections */
+    --text-color: #EAEAEA;     /* Blanc cassé */
+    --accent-color: #00BFFF;   /* BLEU CLAIR VIF (Sky Blue) - Le nouveau Cyan */
+    --font-family: 'Montserrat', sans-serif;
+}
+/* ... le reste du code CSS ne change pas ... */
 /* Réinitialisation de base */
 * {
     margin: 0;
@@ -360,5 +372,44 @@ footer {
         display: block;
         width: 100%;
         text-align: center;
+    }
+}
+/* ======================================================= */
+/* 8. ADAPTATION AU THÈME CLAIR (MEDIA QUERY) */
+/* ======================================================= */
+
+/* Si l'utilisateur préfère le mode clair, on inverse les couleurs */
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-bg: #FFFFFF;     /* Fond Blanc */
+        --secondary-bg: #F0F0F0;   /* Gris très clair pour les cartes */
+        --text-color: #333333;     /* Texte Gris foncé */
+        --accent-color: #1E90FF;   /* Bleu Vif (pour contraster sur fond blanc) */
+    }
+
+    /* Ajustement des ombres pour un fond clair */
+    .main-header {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .primary-btn {
+        color: var(--text-color); /* Texte sombre sur le bouton bleu clair */
+        border: 2px solid var(--accent-color);
+    }
+
+    .primary-btn:hover {
+        background-color: var(--secondary-bg); /* S'assombrit légèrement au survol */
+        color: var(--accent-color);
+        box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+    }
+
+    /* Les cartes de projet ont des ombres plus légères */
+    .project-card, .timeline-item {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Le glow des cartes est adapté pour ne pas être trop vif sur blanc */
+    .project-card:hover {
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(30, 144, 255, 0.2); 
     }
 }
