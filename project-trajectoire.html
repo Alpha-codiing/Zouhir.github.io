@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet: Maintien de Trajectoire</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo"><a href="index.html" class="accent-text">ZOUHIR OUARAB</a></div> 
+            <ul>
+                <li><a href="index.html#bio">Accueil</a></li> 
+                <li><a href="projects.html">Tous les Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-container project-detail">
+            <h1 data-aos="fade-down">Système de <span class="accent-text">Maintien de Trajectoire</span> Autonome</h1>
+            
+            <div class="media-container" data-aos="zoom-in" data-aos-delay="300">
+                <!-- Image/Vidéo -->
+                <img src="https://via.placeholder.com/1200x675/00FFFF/1A1A1A?text=SCHEMA+SYSTEME+DE+TRAJECTOIRE" 
+                     alt="Schéma du système de maintien de trajectoire" class="main-image">
+            </div>
+
+            <div class="project-info" data-aos="fade-up" data-aos-delay="500">
+                <h2>Contexte & Objectifs</h2>
+                <p>
+                    Conception d'un système électronique visant à garantir le maintien d'une trajectoire définie pour un véhicule. 
+                    L'objectif principal était de développer une boucle de rétroaction électronique capable de **détecter et de corriger** 
+                    automatiquement les écarts de trajectoire en temps réel.
+                </p>
+
+                <h2>Fonctionnalités Clés</h2>
+                <ul class="key-features">
+                    <li data-aos="fade-right">**Détection :** Utilisation de capteurs (à spécifier, ex: gyroscope, accéléromètre, capteurs de ligne) pour mesurer l'orientation et la position du véhicule.</li>
+                    <li data-aos="fade-right" data-aos-delay="100">**Correction Temps Réel :** Implémentation d'un algorithme sur microcontrôleur pour analyser les données et envoyer des commandes aux actionneurs (moteurs/servos) pour une correction immédiate.</li>
+                    <li data-aos="fade-right" data-aos-delay="200">**Intégration Électronique :** Assemblage et interfaçage des capteurs et du microcontrôleur sur une seule carte pour une solution compacte et rapide.</li>
+                </ul>
+
+                <h2>Technologies Maîtrisées</h2>
+                <div class="tech-list-container">
+                    <span class="tech-tag" data-aos="flip-up">Microcontrôleur (STM32/Arduino)</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="100">C/C++</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="200">Capteurs (Inertiels ou Optiques)</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="300">Automatique / Commande</span>
+                </div>
+
+                <h2>Schéma de Conception</h2>
+                <div class="image-gallery">
+                    <img src="https://via.placeholder.com/400x250/00FFFF/1A1A1A?text=Schéma+Électronique" alt="Schéma de circuit" data-aos="fade-right">
+                    <img src="https://via.placeholder.com/400x250/FF00FF/1A1A1A?text=Carte+Microcontrôleur" alt="Photo de la carte" data-aos="fade-left">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. <a href="projects.html">Voir tous les projets</a></p>
+    </footer>
+
+    <script src="main.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); 
+    </script>
+</body>
+</html>
