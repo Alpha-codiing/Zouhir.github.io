@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet: Effets Lumineux</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo"><a href="index.html" class="accent-text">ZOUHIR OUARAB</a></div> 
+            <ul>
+                <li><a href="index.html#bio">Accueil</a></li> 
+                <li><a href="projects.html">Tous les Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-container project-detail">
+            <h1 data-aos="fade-down">Effets Lumineux <span class="accent-text">Synchronisés</span> pour Musicien</h1>
+            
+            <div class="media-container" data-aos="zoom-in" data-aos-delay="300">
+                <!-- Image/Vidéo -->
+                <img src="https://via.placeholder.com/1200x675/00FFFF/1A1A1A?text=DEMO+EFFETS+LUMINEUX+LED" 
+                     alt="Démonstration des effets lumineux LED" class="main-image">
+            </div>
+
+            <div class="project-info" data-aos="fade-up" data-aos-delay="500">
+                <h2>Contexte & Objectifs</h2>
+                <p>
+                    Développement d'une solution d'éclairage scénique personnalisée pour un musicien. Le défi était de créer un 
+                    **algorithme embarqué en C** capable de lire des séquences préprogrammées et de synchroniser des effets lumineux 
+                    sur des bandes de LED pour un rendu dynamique et sur mesure.
+                </p>
+
+                <h2>Fonctionnalités Clés</h2>
+                <ul class="key-features">
+                    <li data-aos="fade-right">**Algorithme C Embarqué :** Conception d'un code optimisé pour s'exécuter sur un microcontrôleur à ressources limitées.</li>
+                    <li data-aos="fade-right" data-aos-delay="100">**Synchronisation et Personnalisation :** Mise en place d'un protocole pour définir des séquences lumineuses uniques (couleur, intensité, durée) adaptées à différentes chansons ou ambiances.</li>
+                    <li data-aos="fade-right" data-aos-delay="200">**Gestion des LED :** Utilisation de librairies ou de programmation directe des registres pour piloter efficacement de longues bandes de LED (ex: WS2812B/NeoPixel).</li>
+                </ul>
+
+                <h2>Technologies Maîtrisées</h2>
+                <div class="tech-list-container">
+                    <span class="tech-tag" data-aos="flip-up">C (Microcontrôleur)</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="100">STM32/Arduino</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="200">Électronique Numérique</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="300">API (pour la personnalisation)</span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. <a href="projects.html">Voir tous les projets</a></p>
+    </footer>
+
+    <script src="main.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); 
+    </script>
+</body>
+</html>
