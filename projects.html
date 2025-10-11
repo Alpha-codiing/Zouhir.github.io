@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Zouhir Ouarab</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Chemin vers le CSS -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo"><a href="index.html" class="accent-text">ZOUHIR OUARAB</a></div>
+            <ul>
+                <li><a href="index.html#bio">Accueil</a></li>
+                <li><a href="#projects-list">Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects-list" class="section-container">
+            <h1 class="section-title" data-aos="fade-down">Toutes mes <span class="accent-text">Réalisations</span></h1>
+
+            <div class="project-grid">
+                
+                <!-- Projet 1: Véhicule Autonome (M1) -->
+                <!-- L'effet 'fade-up' avec des retards rend l'apparition smooth -->
+                <a href="project-autonome.html" class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Projet Master 1 : Véhicule Autonome</h3>
+                    <p>Conception complète d'un système de navigation et d'évitement d'obstacles (LIDAR, YOLOv3, Python).</p>
+                    <span class="read-more">Détails techniques <span class="arrow">→</span></span>
+                </a>
+
+                <!-- Projet 2: Maintien de Trajectoire (Expérience) -->
+                <a href="project-trajectoire.html" class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Système de Maintien de Trajectoire</h3>
+                    <p>Conception électronique pour la détection et la correction en temps réel des écarts de trajectoire d'un véhicule.</p>
+                    <span class="read-more">Détails techniques <span class="arrow">→</span></span>
+                </a>
+
+                <!-- Projet 3: Effets Lumineux (Expérience) -->
+                <a href="project-musician.html" class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Effets Lumineux Personnalisés (Musique)</h3>
+                    <p>Développement d'un algorithme C sur microcontrôleur pour synchroniser des effets lumineux LED sur séquences musicales.</p>
+                    <span class="read-more">Détails techniques <span class="arrow">→</span></span>
+                </a>
+
+                <!-- Projet 4: Affichage Météo (Expérience) -->
+                <a href="project-meteo.html" class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Affichage Météo sur Écran</h3>
+                    <p>Création d'un algorithme Python pour la récupération et l'affichage des données météorologiques via API.</p>
+                    <span class="read-more">Détails techniques <span class="arrow">→</span></span>
+                </a>
+                
+                <!-- Projet 5: Modélisation 3D (Expérience) -->
+                <a href="project-3d.html" class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3>Modélisation 3D (SolidWorks)</h3>
+                    <p>Réalisation d'un modèle 3D précis d'une main à l'aide de l'outil de CAO SolidWorks.</p>
+                    <span class="read-more">Détails techniques <span class="arrow">→</span></span>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Contactez-moi : zouhir.ouarab@outlook.com</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); 
+    </script>
+</body>
+</html>
