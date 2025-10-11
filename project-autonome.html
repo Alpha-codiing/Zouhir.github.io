@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet: Véhicule Autonome (M1)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CHEMIN CORRIGÉ pour le CSS (on retire "../") -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <!-- CHEMIN CORRIGÉ pour le lien Accueil -->
+            <div class="logo"><a href="index.html" class="accent-text">ZOUHIR OUARAB</a></div> 
+            <ul>
+                <!-- CHEMIN CORRIGÉ pour les liens de navigation -->
+                <li><a href="index.html#bio">Accueil</a></li> 
+                <li><a href="projects.html">Tous les Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ... tout le contenu de la section Projet ... -->
+        <section class="section-container project-detail">
+            <h1 data-aos="fade-down">Projet de Master 1 : <span class="accent-text">Véhicule Autonome</span></h1>
+            
+            <div class="media-container" data-aos="zoom-in" data-aos-delay="300">
+                <!-- Image/Vidéo -->
+                <img src="https://via.placeholder.com/1200x675/00FFFF/1A1A1A?text=VIDEO+DEMO+DU+VEHICULE+AUTONOME" 
+                     alt="Démonstration du véhicule autonome" class="main-image">
+            </div>
+
+            <div class="project-info" data-aos="fade-up" data-aos-delay="500">
+                <h2>Contexte & Objectifs</h2>
+                <p>
+                    Conception complète d'un véhicule autonome basé sur un **Raspberry Pi**, intégrant des systèmes de perception avancés 
+                    pour la navigation et l'évitement d'obstacles en temps réel. [...]
+                </p>
+
+                <h2>Fonctionnalités Clés</h2>
+                <ul class="key-features">
+                    <li data-aos="fade-right">**Navigation et Perception :** Intégration de la caméra et d'un **LIDAR** pour la perception de l'environnement, traitées par l'IA **YOLOv3-tiny**.</li>
+                    <li data-aos="fade-right" data-aos-delay="100">**Évitement Adaptatif :** Algorithme combinant la détection d'objets (vision) et la mesure de distances (LIDAR) pour contrôler précisément la direction (servo) et les moteurs (L298N).</li>
+                    <li data-aos="fade-right" data-aos-delay="200">**Communication et Alerte :** Mise en place d'un système de signalement des obstacles vers un serveur pour alerter les autres usagers.</li>
+                </ul>
+
+                <h2>Technologies Maîtrisées</h2>
+                <div class="tech-list-container">
+                    <span class="tech-tag" data-aos="flip-up">Python</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="100">YOLOv3 (IA)</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="200">Fusion de Capteurs</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="300">Raspberry Pi</span>
+                    <span class="tech-tag" data-aos="flip-up" data-aos-delay="400">L298N</span>
+                </div>
+
+                <h2>Images du Prototype</h2>
+                <div class="image-gallery">
+                    <img src="https://via.placeholder.com/400x250/00FFFF/1A1A1A?text=Schéma+Architecture" alt="Schéma d'architecture" data-aos="fade-right">
+                    <img src="https://via.placeholder.com/400x250/FF00FF/1A1A1A?text=Photo+Prototype+Réel" alt="Photo du prototype réel" data-aos="fade-left">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. <a href="projects.html">Voir tous les projets</a></p>
+    </footer>
+
+    <!-- CHEMIN CORRIGÉ pour le JS (on retire "../") -->
+    <script src="main.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); 
+    </script>
+</body>
+</html>
