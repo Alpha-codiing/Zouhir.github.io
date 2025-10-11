@@ -1,86 +1,3 @@
-/* Variables pour le thème futuriste et sombre */
-
-/* --- AMÉLIORATION DE LA PAGE D'ACCUEIL --- */
-
-/* Style du Titre Principal */
-#bio .section-title {
-    font-size: 3.5em; /* Grand titre pour l'impact */
-    text-align: left;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-/* Style du paragraphe de profil */
-#bio p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin-bottom: 15px;
-    color: rgba(234, 234, 234, 0.9);
-}
-
-/* --- AMÉLIORATION DU PARCOURS (TIMELINE) --- */
-
-/* Ligne centrale de la timeline */
-.timeline {
-    border-top: 2px solid var(--secondary-bg); /* Ligne supérieure pour le début */
-    padding-top: 0;
-    margin-top: 50px;
-}
-
-.timeline::before {
-    /* Cache l'ancienne ligne verticale du milieu */
-    content: none; 
-}
-
-/* Nouveaux styles pour les éléments de la timeline */
-.timeline-item {
-    background: var(--secondary-bg);
-    padding: 25px;
-    border-radius: 8px;
-    margin: 30px 0; /* Espacement vertical */
-    width: 100%;
-    max-width: 100%;
-    border-left: 5px solid var(--accent-color); /* Bande accentuée */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    
-    /* Animation customisée pour la fluidité (facultatif mais cool) */
-    transition: transform 0.3s ease-in-out;
-}
-
-.timeline-item:hover {
-    transform: translateX(10px); /* Glisse légèrement à droite au survol */
-    box-shadow: 0 5px 30px rgba(0, 255, 255, 0.1); /* Petit glow au survol */
-}
-
-.timeline-item h3 {
-    color: var(--text-color);
-    margin-bottom: 5px;
-    font-size: 1.4em;
-}
-
-.timeline-item .institution {
-    font-weight: 700;
-    font-size: 1em;
-    margin-top: 5px;
-}
-
-/* --- Responsive (Ajustement pour mobile) --- */
-@media (max-width: 768px) {
-    #bio .section-title {
-        font-size: 2.5em;
-        text-align: center;
-    }
-    #bio p {
-        text-align: center;
-    }
-    .primary-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-
 
 
 
@@ -337,3 +254,86 @@ footer {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     /* L'effet 'flip-up' d'AOS est spectaculaire sur ces petits éléments */
 }
+/* Variables pour le thème futuriste et sombre */
+
+/* --- AMÉLIORATION DE LA PAGE D'ACCUEIL --- */
+
+/* Style du Titre Principal */
+#bio .section-title {
+    font-size: 3.5em; /* Grand titre pour l'impact */
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Style du paragraphe de profil */
+#bio p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin-bottom: 15px;
+    color: rgba(234, 234, 234, 0.9);
+}
+
+/* --- AMÉLIORATION DU PARCOURS (TIMELINE) --- */
+
+/* Ligne centrale de la timeline */
+.timeline {
+    border-top: 2px solid var(--secondary-bg); /* Ligne supérieure pour le début */
+    padding-top: 0;
+    margin-top: 50px;
+}
+
+.timeline::before {
+    /* Cache l'ancienne ligne verticale du milieu */
+    content: none; 
+}
+
+/* Nouveaux styles pour les éléments de la timeline */
+.timeline-item {
+    background: var(--secondary-bg);
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0; /* Espacement vertical */
+    width: 100%;
+    max-width: 100%;
+    border-left: 5px solid var(--accent-color); /* Bande accentuée */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    
+    /* Animation customisée pour la fluidité (facultatif mais cool) */
+    transition: transform 0.3s ease-in-out;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px); /* Glisse légèrement à droite au survol */
+    box-shadow: 0 5px 30px rgba(0, 255, 255, 0.1); /* Petit glow au survol */
+}
+
+.timeline-item h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.4em;
+}
+
+.timeline-item .institution {
+    font-weight: 700;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/* --- Responsive (Ajustement pour mobile) --- */
+@media (max-width: 768px) {
+    #bio .section-title {
+        font-size: 2.5em;
+        text-align: center;
+    }
+    #bio p {
+        text-align: center;
+    }
+    .primary-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
