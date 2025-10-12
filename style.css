@@ -1,19 +1,15 @@
 /* ======================================================= */
-/* 1. VARIABLES & RESET (BASE DU THÈME FUTURISTE) */
-/* ======================================================= */
-
-/* ======================================================= */
-/* 1. VARIABLES & RESET (BASE DU THÈME FUTURISTE) */
+/* 1. VARIABLES & RESET (BASE DU THÈME BLEU CLAIR/NOIR) */
 /* ======================================================= */
 
 :root {
-    --primary-bg: #0A0A1F;     /* Bleu très foncé/Presque noir (pour le fond) */
-    --secondary-bg: #151538;   /* Bleu foncé pour les cartes/sections */
-    --text-color: #EAEAEA;     /* Blanc cassé */
-    --accent-color: #00BFFF;   /* BLEU CLAIR VIF (Sky Blue) - Le nouveau Cyan */
+    --primary-bg: #E6F7FF;     /* BLEU CLAIR (Fond principal) */
+    --secondary-bg: #FFFFFF;   /* Blanc Pur (Pour les cartes/sections) */
+    --text-color: #1A1A1A;     /* Gris très foncé/Noir (Texte principal) */
+    --accent-color: #0077CC;   /* Bleu Vif (Couleur d'accentuation) */
     --font-family: 'Montserrat', sans-serif;
 }
-/* ... le reste du code CSS ne change pas ... */
+
 /* Réinitialisation de base */
 * {
     margin: 0;
@@ -26,7 +22,7 @@ body {
     background-color: var(--primary-bg);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
+    overflow-x: hidden; 
 }
 
 /* --- Typographie et Couleurs --- */
@@ -43,13 +39,10 @@ h1, h2, h3 {
 /* 2. TRANSITIONS & LAYOUT (LA CLÉ DU "SMOOTH") */
 /* ======================================================= */
 
-/* Transitions Fluides (Appliquées à tous les éléments interactifs) */
 a, button, .project-card, .timeline-item {
     transition: all 0.3s ease-in-out; 
-    /* 0.3s est le temps idéal pour un effet fluide sans être lent */
 }
 
-/* Layout Général */
 .section-container {
     padding: 80px 5%;
     max-width: 1200px;
@@ -69,10 +62,10 @@ a, button, .project-card, .timeline-item {
 .main-header {
     background: var(--secondary-bg);
     padding: 20px 5%;
-    position: sticky; /* Fixe la barre de navigation en haut */
+    position: sticky; 
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour le fond clair */
 }
 
 nav {
@@ -105,7 +98,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--accent-color);
-    background-color: rgba(0, 255, 255, 0.1); /* Léger fond cyan au survol */
+    background-color: rgba(0, 119, 204, 0.1); /* Léger fond bleu au survol */
 }
 
 /* Boutons */
@@ -120,14 +113,14 @@ nav ul li a:hover {
 
 .primary-btn {
     background-color: var(--accent-color);
-    color: var(--primary-bg);
+    color: var(--secondary-bg); /* Texte Blanc sur bouton Bleu Vif */
     border: 2px solid var(--accent-color);
 }
 
 .primary-btn:hover {
-    background-color: var(--primary-bg);
-    color: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-color); /* Effet Glow */
+    background-color: var(--secondary-bg); /* Fond Blanc au survol */
+    color: var(--accent-color); /* Texte Bleu Vif au survol */
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.5); 
 }
 
 
@@ -147,7 +140,7 @@ nav ul li a:hover {
     font-size: 1.1em;
     max-width: 800px;
     margin-bottom: 15px;
-    color: rgba(234, 234, 234, 0.9);
+    color: var(--text-color); /* Texte noir/gris foncé sur fond clair */
 }
 
 /* Timeline (Parcours) */
@@ -158,7 +151,7 @@ nav ul li a:hover {
 }
 
 .timeline::before {
-    content: none; /* Cache la ligne verticale centrale */
+    content: none; 
 }
 
 .timeline-item {
@@ -169,12 +162,12 @@ nav ul li a:hover {
     width: 100%;
     max-width: 100%;
     border-left: 5px solid var(--accent-color); 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre légère pour le fond clair */
 }
 
 .timeline-item:hover {
-    transform: translateX(10px); /* Glisse légèrement à droite (smooth) */
-    box-shadow: 0 5px 30px rgba(0, 255, 255, 0.1);
+    transform: translateX(10px); 
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(0, 119, 204, 0.2); /* Léger blue-glow */
 }
 
 .timeline-item h3 {
@@ -208,14 +201,14 @@ nav ul li a:hover {
     color: var(--text-color);
     border-radius: 10px;
     border-left: 5px solid transparent; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre légère */
     display: block; 
 }
 
 .project-card:hover {
-    transform: translateY(-8px); /* L'élément monte légèrement (très smooth) */
-    border-left: 5px solid var(--accent-color); /* La bordure s'anime */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 255, 0.4); /* Glow accentué */
+    transform: translateY(-8px); 
+    border-left: 5px solid var(--accent-color); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 119, 204, 0.2); /* Léger blue-glow accentué */
 }
 
 .project-card h3 {
@@ -243,7 +236,7 @@ nav ul li a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 119, 204, 0.2); /* Ombre subtilement bleue */
 }
 
 .project-detail h1 {
@@ -280,12 +273,12 @@ nav ul li a:hover {
 
 .tech-tag {
     background-color: var(--accent-color);
-    color: var(--primary-bg);
+    color: var(--secondary-bg); /* Texte Blanc sur fond Bleu Vif */
     padding: 8px 15px;
     border-radius: 20px;
     font-weight: 700;
     font-size: 0.9em;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 119, 204, 0.3);
 }
 
 /* Galerie d'images/captures */
@@ -301,19 +294,19 @@ nav ul li a:hover {
     height: auto;
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Vidéo Responsive (Maintien du ratio 16:9) */
+/* Vidéo Responsive */
 .video-responsive {
     overflow: hidden;
-    padding-bottom: 56.25%; /* Ratio 16:9 (9/16 = 0.5625) */
+    padding-bottom: 56.25%; 
     position: relative;
     height: 0;
     margin-bottom: 30px;
     border: 3px solid var(--accent-color);
     border-radius: 8px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 119, 204, 0.2);
 }
 
 .video-responsive iframe,
@@ -334,7 +327,7 @@ footer {
     text-align: center;
     padding: 30px;
     background-color: var(--secondary-bg);
-    color: rgba(234, 234, 234, 0.7);
+    color: rgba(26, 26, 26, 0.7); /* Texte Gris foncé sur fond blanc */
     font-size: 0.9em;
 }
 
@@ -344,7 +337,7 @@ footer {
         padding: 15px 5%;
     }
     nav ul {
-        display: none; /* Cache la nav sur mobile (on pourrait ajouter un menu burger en JS si besoin) */
+        display: none; 
     }
     
     .section-title {
@@ -364,44 +357,5 @@ footer {
         display: block;
         width: 100%;
         text-align: center;
-    }
-}
-/* ======================================================= */
-/* 8. ADAPTATION AU THÈME CLAIR (MEDIA QUERY) */
-/* ======================================================= */
-
-/* Si l'utilisateur préfère le mode clair, on inverse les couleurs */
-@media (prefers-color-scheme: light) {
-    :root {
-        --primary-bg: #FFFFFF;     /* Fond Blanc */
-        --secondary-bg: #F0F0F0;   /* Gris très clair pour les cartes */
-        --text-color: #333333;     /* Texte Gris foncé */
-        --accent-color: #1E90FF;   /* Bleu Vif (pour contraster sur fond blanc) */
-    }
-
-    /* Ajustement des ombres pour un fond clair */
-    .main-header {
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .primary-btn {
-        color: var(--text-color); /* Texte sombre sur le bouton bleu clair */
-        border: 2px solid var(--accent-color);
-    }
-
-    .primary-btn:hover {
-        background-color: var(--secondary-bg); /* S'assombrit légèrement au survol */
-        color: var(--accent-color);
-        box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
-    }
-
-    /* Les cartes de projet ont des ombres plus légères */
-    .project-card, .timeline-item {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Le glow des cartes est adapté pour ne pas être trop vif sur blanc */
-    .project-card:hover {
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(30, 144, 255, 0.2); 
     }
 }
