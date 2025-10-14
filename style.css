@@ -79,7 +79,17 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* AJOUTEZ CECI DANS LA SECTION 3. HEADER, NAVIGATION & BOUTONS de votre style.css */
+.site-title a {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-color); 
+    text-decoration: none;
+    
+}
+.site-title a:hover {
+     color: var(--accent-color); 
+}
 .logo {
     font-size: 1.5em;
     font-weight: 700;
