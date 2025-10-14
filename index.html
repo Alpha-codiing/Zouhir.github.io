@@ -14,21 +14,19 @@
     <!-- VOTRE CSS GLOBAL -->
     <link rel="stylesheet" href="style.css"> 
     
-    <!-- CSS SPÉCIFIQUE À L'ANIMATION DE LA PAGE D'ACCUEIL (ajouté au style.css) -->
+    <!-- CSS SPÉCIFIQUE À L'ANIMATION DE LA PAGE D'ACCUEIL -->
     <style>
-        /* La hauteur de la section d'accueil est fixée à celle de la vue (viewport) */
         .accueil-animation-section {
-            height: 80vh; /* 80% de la hauteur de l'écran */
+            height: 80vh; 
             display: flex;
             justify-content: center; 
             align-items: center; 
             overflow: hidden; 
-            transition: all 0.5s ease-out; /* Transition pour le reste des styles */
+            transition: all 0.5s ease-out; 
         }
         
-        /* Conteneur de la photo */
         .photo-container {
-            transform: scale(1); /* Taille initiale */
+            transform: scale(1);
             transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
             z-index: 10;
         }
@@ -38,39 +36,32 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover; 
-            border: 5px solid var(--accent-color); /* Utilisation de la couleur pro */
+            border: 5px solid var(--accent-color); 
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Conteneur du texte de profil (État initial) */
         .texte-profil {
             opacity: 0;
             transform: translateX(-30px);
             transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; 
             max-width: 500px;
             padding-left: 40px; 
-            /* On utilise la couleur de texte normale */
             color: var(--text-color); 
         }
 
-        /* --- STYLES APPLIQUÉS APRÈS L'ANIMATION (grâce à la classe 'animation-active') --- */
-
-        /* Éloigne la photo et le texte pour l'effet d'introduction */
         .accueil-animation-section.animation-active {
             justify-content: space-evenly; 
         }
 
-        /* Le texte devient visible et se place à sa position finale */
         .accueil-animation-section.animation-active .texte-profil {
             opacity: 1;
             transform: translateX(0);
         }
         
-        /* Styles spécifiques du texte d'animation */
         .texte-profil h1 {
             font-size: 2.5em;
             margin: 0 0 10px 0;
-            color: var(--accent-color); /* Nom en couleur accentuée */
+            color: var(--accent-color); 
         }
         
         .texte-profil p {
@@ -84,7 +75,7 @@
 
     <header class="main-header">
         <nav>
-            <!-- Nom du Site (Non Logo) -->
+            <!-- TITRE DU SITE -->
             <div class="site-title"><a href="index.html">Zouhir Ouarab</a></div>
             <ul>
                 <li><a href="#parcours">Parcours</a></li>
@@ -94,11 +85,10 @@
     </header>
 
     <main>
-        <!-- Section d'Animation/Introduction (Remplace l'ancienne #bio) -->
+        <!-- Section 1: Animation d'Introduction/Profil -->
         <section id="bio" class="accueil-animation-section">
             
             <div class="photo-container">
-                <!-- IMPORTANT : Assurez-vous que l'image 'zizou.png' est dans le même dossier -->
                 <img src="zizou.png" alt="Photo de Zouhir Ouarab"> 
             </div>
 
@@ -110,30 +100,57 @@
                 <p>
                     À la recherche d’un stage de 6 mois à partir de février 2026, dans les domaines suivants: La robotique, systèmes embarqués, vision par ordinateur IA, contrôle commande, concepteur de cartes électroniques et système autonome.
                 </p>
-                <!-- Utilisation de la classe de bouton global -->
-                <a href="mailto:zouhir.ouarab@outlook.com" class="btn primary-btn">Contact</a>
+                <!-- Bouton Contact retiré -->
             </div>
         </section>
 
-        <!-- Section 2: Parcours Universitaire (Reste la même, commence à 80vh) -->
+        <!-- Section 2: Parcours Universitaire (Formation) -->
         <section id="parcours" class="section-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-            <!-- ... Contenu du Parcours ... -->
+            <h2 class="section-title">Parcours <span class="accent-text">Académique</span></h2>
+            <div class="timeline">
+                <!-- Master 2 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <h3>2024 - 2026</h3>
+                    <p>Master 2 (Bac+5) Électronique, Énergie Électrique, Automatique</p>
+                    <p class="institution accent-text">Université Évry Paris Saclay</p>
+                    <small>Parcours Systèmes Intelligents Automobiles et Aéronautiques</small>
+                </div>
+                <!-- Licence -->
+                <div class="timeline-item" data-aos="fade-left">
+                    <h3>2022 - 2024</h3>
+                    <p>Licence Électronique, Énergie Électrique, Automatique</p>
+                    <p class="institution accent-text">Université Caen Normandie</p>
+                </div>
+            </div>
         </section>
 
         <!-- Section 3: Aperçu des Projets -->
         <section id="projects-preview" class="section-container">
-            <!-- ... Contenu des Projets ... -->
+            <h2 class="section-title" data-aos="zoom-in">Projets <span class="accent-text">Réalisés</span></h2>
+            
+            <div class="project-grid">
+                <!-- Les cartes renvoient directement aux pages détaillées -->
+                <a href="project-autonome.html" class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3>Véhicule Autonome (Master 1)</h3>
+                    <p>Conception d'un système de navigation et d'évitement d'obstacles (LIDAR, YOLOv3, Python).</p>
+                    <span class="read-more">Détails <span class="arrow">→</span></span>
+                </a>
+                
+                <a href="projects.html" class="project-card" data-aos="fade-up" data-aos-delay="600">
+                    <h3>Voir tous les projets</h3>
+                    <p>Accédez à la liste complète de mes réalisations.</p>
+                    <span class="read-more">Liste complète <span class="arrow">→</span></span>
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mon Portfolio. Contactez-moi : zouhir.ouarab@outlook.com</p>
+        <p>&copy; 2024 Mon Portfolio. Contact : zouhir.ouarab@outlook.com | Tél : 07 53 68 87 97</p>
     </footer>
 
     <!-- JS GLOBAL -->
     <script src="main.js"></script>
-    
-    <!-- JS de la Librairie AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init(); // Initialise AOS
@@ -141,7 +158,6 @@
         // JAVASCRIPT POUR L'ANIMATION D'INTRODUCTION
         window.addEventListener('load', () => {
             const container = document.querySelector('.accueil-animation-section');
-            // La photo et le texte sont initialement centrés, puis ils s'écartent
             setTimeout(() => {
                 container.classList.add('animation-active');
             }, 500);
