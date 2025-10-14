@@ -2,14 +2,18 @@
 /* 1. VARIABLES & RESET (BASE DU THÈME BLEU CLAIR/NOIR) */
 /* ======================================================= */
 
+/* ======================================================= */
+/* 1. VARIABLES & RESET (BASE DU THÈME BLEU CLAIR/PROFESSIONNEL) */
+/* ======================================================= */
+
 :root {
-    --primary-bg: #E6F7FF;     /* BLEU CLAIR (Fond principal) */
+    --primary-bg: #F0F8FF;     /* BLEU TRÈS CLAIR (Presque Blanc, Fond principal) */
     --secondary-bg: #FFFFFF;   /* Blanc Pur (Pour les cartes/sections) */
     --text-color: #1A1A1A;     /* Gris très foncé/Noir (Texte principal) */
-    --accent-color: #0077CC;   /* Bleu Vif (Couleur d'accentuation) */
+    --accent-color: #005A9C;   /* BLEU MARINE/PROFESSIONNEL (Couleur d'accentuation) */
     --font-family: 'Montserrat', sans-serif;
 }
-
+/* ... le reste du code CSS de votre style.css reste le même ... */
 /* Réinitialisation de base */
 * {
     margin: 0;
