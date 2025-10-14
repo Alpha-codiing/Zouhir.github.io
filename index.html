@@ -1,57 +1,151 @@
-<!-- index.html -->
-<header class="main-header">
-    <nav>
-        <link rel="stylesheet" href="style.css"> 
-        <!-- Remplacer le logo -->
-        <div class="logo">ZOUHIR OUARAB</div> 
-        <ul>
-            <li><a href="#bio">Profil</a></li>
-            <li><a href="#parcours">Formations</a></li>
-            <li><a href="projects.html">Projets</a></li>
-        </ul>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Zouhir Ouarab</title>
+    
+    <!-- Police Futuiste (Montserrat) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Librairie AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<main>
-    <!-- Section 1: Biographie (Profil) -->
-    <section id="bio" class="section-container" data-aos="fade-right" data-aos-duration="1000">
-        <!-- Remplacer le titre -->
-        <h1 class="section-title">Architecte <span class="accent-text">Systèmes Embarqués</span> & Robotique.</h1>
-        <p>
-            Étudiant en Master 2 (Bac+5) « Systèmes Automatiques Mobiles – Perception » à l'Université d'Évry Paris-Saclay. 
-            Passionné par la robotique mobile et la perception par capteurs, je recherche un stage de fin d'études 
-            (démarrage Février 2026).
-        </p>
-        <p>
-            Mon objectif est de mettre en pratique mes solides compétences en **programmation C/C++, Python**, 
-            traitement d'images et de signaux, électronique et automatique, appliquées à des systèmes robustes.
-        </p>
-        <a href="https://linkedin.com/in/zouhir-ouarab" target="_blank" class="btn primary-btn">
-            Mon Profil LinkedIn
-        </a>
-    </section>
+    <!-- VOTRE CSS GLOBAL -->
+    <link rel="stylesheet" href="style.css"> 
+    
+    <!-- CSS SPÉCIFIQUE À L'ANIMATION DE LA PAGE D'ACCUEIL (ajouté au style.css) -->
+    <style>
+        /* La hauteur de la section d'accueil est fixée à celle de la vue (viewport) */
+        .accueil-animation-section {
+            height: 80vh; /* 80% de la hauteur de l'écran */
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+            transition: all 0.5s ease-out; /* Transition pour le reste des styles */
+        }
+        
+        /* Conteneur de la photo */
+        .photo-container {
+            transform: scale(1); /* Taille initiale */
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 10;
+        }
 
-    <!-- Section 2: Parcours Universitaire (Formations) -->
-    <section id="parcours" class="section-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-        <h2 class="section-title">Parcours <span class="accent-text">Académique</span></h2>
-        <div class="timeline">
-            <!-- Master 2 -->
-            <div class="timeline-item" data-aos="fade-right">
-                <h3>2024 - 2026</h3>
-                <p>Master 2 (Bac+5) Électronique, Énergie Électrique, Automatique</p>
-                <p class="institution accent-text">Université Évry Paris Saclay</p>
-                <small>Parcours Systèmes Intelligents Automobiles et Aéronautiques</small>
+        .photo-container img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover; 
+            border: 5px solid var(--accent-color); /* Utilisation de la couleur pro */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Conteneur du texte de profil (État initial) */
+        .texte-profil {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; 
+            max-width: 500px;
+            padding-left: 40px; 
+            /* On utilise la couleur de texte normale */
+            color: var(--text-color); 
+        }
+
+        /* --- STYLES APPLIQUÉS APRÈS L'ANIMATION (grâce à la classe 'animation-active') --- */
+
+        /* Éloigne la photo et le texte pour l'effet d'introduction */
+        .accueil-animation-section.animation-active {
+            justify-content: space-evenly; 
+        }
+
+        /* Le texte devient visible et se place à sa position finale */
+        .accueil-animation-section.animation-active .texte-profil {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Styles spécifiques du texte d'animation */
+        .texte-profil h1 {
+            font-size: 2.5em;
+            margin: 0 0 10px 0;
+            color: var(--accent-color); /* Nom en couleur accentuée */
+        }
+        
+        .texte-profil p {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <header class="main-header">
+        <nav>
+            <!-- Nom du Site (Non Logo) -->
+            <div class="site-title"><a href="index.html">Zouhir Ouarab</a></div>
+            <ul>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="projects.html">Projets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section d'Animation/Introduction (Remplace l'ancienne #bio) -->
+        <section id="bio" class="accueil-animation-section">
+            
+            <div class="photo-container">
+                <!-- IMPORTANT : Assurez-vous que l'image 'zizou.png' est dans le même dossier -->
+                <img src="zizou.png" alt="Photo de Zouhir Ouarab"> 
             </div>
-            <!-- Licence -->
-            <div class="timeline-item" data-aos="fade-left">
-                <h3>2022 - 2024</h3>
-                <p>Licence Électronique, Énergie Électrique, Automatique</p>
-                <p class="institution accent-text">Université Caen Normandie</p>
-            </div>
-            <!-- Ajoutez ici d'autres formations (ex: BIA) -->
-        </div>
-    </section>
 
-    <!-- Section 3: Aperçu des Projets (Utilise la structure existante) -->
-    <!-- ... le reste de la section projets ne change pas pour l'instant ... -->
-</main>
+            <div class="texte-profil">
+                <h1>Zouhir Ouarab</h1>
+                <p>
+                    Étudiant en Master 2 EEEA parcours systèmes automatiques mobiles mention perception à l’Université d’Évry Paris-Saclay. 
+                </p>
+                <p>
+                    À la recherche d’un stage de 6 mois à partir de février 2026, dans les domaines suivants: La robotique, systèmes embarqués, vision par ordinateur IA, contrôle commande, concepteur de cartes électroniques et système autonome.
+                </p>
+                <!-- Utilisation de la classe de bouton global -->
+                <a href="mailto:zouhir.ouarab@outlook.com" class="btn primary-btn">Contact</a>
+            </div>
+        </section>
+
+        <!-- Section 2: Parcours Universitaire (Reste la même, commence à 80vh) -->
+        <section id="parcours" class="section-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <!-- ... Contenu du Parcours ... -->
+        </section>
+
+        <!-- Section 3: Aperçu des Projets -->
+        <section id="projects-preview" class="section-container">
+            <!-- ... Contenu des Projets ... -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Contactez-moi : zouhir.ouarab@outlook.com</p>
+    </footer>
+
+    <!-- JS GLOBAL -->
+    <script src="main.js"></script>
+    
+    <!-- JS de la Librairie AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Initialise AOS
+        
+        // JAVASCRIPT POUR L'ANIMATION D'INTRODUCTION
+        window.addEventListener('load', () => {
+            const container = document.querySelector('.accueil-animation-section');
+            // La photo et le texte sont initialement centrés, puis ils s'écartent
+            setTimeout(() => {
+                container.classList.add('animation-active');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
